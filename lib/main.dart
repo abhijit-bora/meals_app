@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/screens/category_meals_screen.dart';
-import 'screens/categories_screen.dart';
+import 'package:meal_app/screens/meal_detail_screen.dart';
+
+import './screens/category_meals_screen.dart';
+import './screens/categories_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,38 +13,28 @@ class MyApp extends StatelessWidget {
       title: 'DeliMeals',
       theme: ThemeData(
         primarySwatch: Colors.cyan,
-        accentColor: Colors.cyanAccent,
+        accentColor: Colors.amberAccent,
         canvasColor: Color.fromRGBO(255, 254, 229, 1),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
-              bodyText1: TextStyle(
-                color: Color.fromRGBO(20, 51, 51, 1),
-              ),
-              bodyText2: TextStyle(
-                color: Color.fromRGBO(20, 51, 51, 1),
-              ),
-              headline6: TextStyle(
-                fontSize: 20,
-                fontFamily: 'RobotoCondensed',
-                fontWeight: FontWeight.bold,
-              ),
+            bodyText1: TextStyle(
+              color: Color.fromRGBO(20, 51, 51, 1),
             ),
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Deli Meals'),
-          actions: <Widget>[
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.add),
+            bodyText2: TextStyle(
+              color: Color.fromRGBO(20, 51, 51, 1),
             ),
-          ],
-        ),
-        body: CategoriesScreen(),
+            subtitle1: TextStyle(
+              fontSize: 20,
+              fontFamily: 'RobotoCondensed',
+              fontWeight: FontWeight.bold,
+            )),
       ),
+      // home: CategoriesScreen(),
+      initialRoute: '/', // default is '/'
       routes: {
+        '/': (ctx) => CategoriesScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
-        //'/categories': (ctx) => CategoryMealsScreen(),
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
       },
     );
   }
