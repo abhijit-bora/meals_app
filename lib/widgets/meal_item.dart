@@ -86,19 +86,19 @@ class MealItem extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: 20,
-                  right: 10,
+                  bottom: 0,
+                  right: 0,
                   child: Container(
-                    width: 300,
-                    color: Colors.black54,
+                    width: 200,
+                    color: Colors.black26,
                     padding: EdgeInsets.symmetric(
                       vertical: 5,
-                      horizontal: 20,
+                      horizontal: 10,
                     ),
                     child: Text(
                       title,
                       style: TextStyle(
-                        fontSize: 26,
+                        fontSize: 20,
                         color: Colors.white,
                       ),
                       softWrap: true,
